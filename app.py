@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
 import numpy as np
-import pickle5 as pickle
+import pickle
 import os
 import tensorflow
 from tensorflow.keras.preprocessing import image
