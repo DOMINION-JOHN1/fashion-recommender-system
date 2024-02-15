@@ -10,9 +10,9 @@ from sklearn.neighbors import NearestNeighbors
 from numpy.linalg import norm
 from classification_models.tfkeras import Classifiers
 
-
-feature_list = np.array(pickle.load(open('feature_list.pkl','rb')))
 filenames = pickle.load(open('filenames.pkl','rb'))
+feature_list = np.array(pickle.load(open('feature_list.pkl','rb')))
+
 # Get the ResNeXt model
 ResNeXt50, preprocess_input = Classifiers.get('resnext50')
 # create a model instance
