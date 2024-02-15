@@ -11,8 +11,8 @@ from numpy.linalg import norm
 from classification_models.tfkeras import Classifiers
 
 filenames = pickle.load(open('filenames.pkl','rb'))
-feature_list = np.array(pickle.load(open('feature_list.pkl','rb')))
-
+feature_list = pickle.load(open('feature_list.pkl','rb'))
+feature_list = np.array(feature_list)
 # Get the ResNeXt model
 ResNeXt50, preprocess_input = Classifiers.get('resnext50')
 # create a model instance
