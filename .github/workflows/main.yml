@@ -17,4 +17,3 @@ jobs:
         run: |
           git remote set-url origin https://$HF_TOKEN@huggingface.co/spaces/Dominion-John/goody_goody_fashion_store
           git pull origin main
-
