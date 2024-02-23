@@ -11,6 +11,10 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
+      - name: Set up Git user
+        run: |
+          git config --global user.email "jdominion123@gmail.com"
+          git config --global user.name "DOMINION-JOHN1"
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
@@ -18,5 +22,4 @@ jobs:
           git remote set-url origin https://$HF_TOKEN@huggingface.co/spaces/Dominion-John/goody_goody_fashion_store
           git add . 
           git commit -m "Your commit message"
-          git push origin  
-
+          git push origin
