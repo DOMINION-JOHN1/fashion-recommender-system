@@ -10,10 +10,25 @@ jobs:
   sync-to-hub:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Install Git LFS
+        run: |
+          sudo apt-get install git-lfs
+          git lfs install
+
+      - name: Checkout code
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
           lfs: true
+
+      - name: Track large files with Git LFS
+        run: git lfs track "filenames.pkl"
+
+      - name: Add .gitattributes
+        run: |
+          git add .gitattributes
+          git commit -m "Track filenames.pkl using Git LFS"
+
       - name: Push to hub
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
