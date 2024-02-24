@@ -28,7 +28,7 @@ jobs:
 
       - name: Add and commit large files with Git LFS
         run: |
-          git track git lfs track "filenames.pkl"
+          git lfs track "filenames.pkl"
           git add .
           git commit -m "Add filenames.pkl using Git LFS"
 
