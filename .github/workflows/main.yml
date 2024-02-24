@@ -26,10 +26,6 @@ jobs:
           git config --global user.email "jdominion123@gmail.com"
           git config --global user.name "DOMINION-JOHN1"
 
-      - name: Add and commit large files with Git LFS
-        run: |
-          git add filenames.pkl
-          git commit -m "Add filenames.pkl using Git LFS"
 
       - name: Push to hub
         env:
