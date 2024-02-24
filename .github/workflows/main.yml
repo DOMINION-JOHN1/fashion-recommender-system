@@ -21,13 +21,11 @@ jobs:
           fetch-depth: 0
           lfs: true
 
-      - name: Track large files with Git LFS
-        run: git lfs track "filenames.pkl"
-
-      - name: Add .gitattributes
+      - name: Add and commit large files with Git LFS
         run: |
-          git add .gitattributes
-          git commit -m "Track filenames.pkl using Git LFS"
+          git lfs track "filenames.pkl"
+          git add filenames.pkl
+          git commit -m "Add filenames.pkl using Git LFS"
 
       - name: Push to hub
         env:
