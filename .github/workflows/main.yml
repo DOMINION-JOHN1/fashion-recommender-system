@@ -23,8 +23,8 @@ jobs:
 
       - name: Set Git user
         run: |
-          git config --global user.email "you@example.com"
-          git config --global user.name "Your Name"
+          git config --global user.email "jdominion123@gmail.com"
+          git config --global user.name "DOMINION-JOHN1"
 
       - name: Add and commit large files with Git LFS
         run: |
