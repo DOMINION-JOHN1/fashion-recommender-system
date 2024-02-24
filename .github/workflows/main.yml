@@ -23,9 +23,14 @@ jobs:
 
       - name: Set Git user
         run: |
-          git config --global user.email "jdominion123@gmail.com"
-          git config --global user.name "DOMINION-JOHN1"
+          git config --global user.email "you@example.com"
+          git config --global user.name "Your Name"
 
+      - name: Add and commit large files with Git LFS
+        run: |
+          git track git lfs track "filenames.pkl"
+          git add .
+          git commit -m "Add filenames.pkl using Git LFS"
 
       - name: Push to hub
         env:
