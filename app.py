@@ -24,12 +24,18 @@ st.title('goody goody fashion store')
 
 def save_uploaded_file(uploaded_file):
     try:
+        # Check if the 'uploads' directory exists. If not, create it.
+        if not os.path.exists('uploads'):
+            os.makedirs('uploads')
+
         with open(os.path.join('uploads',uploaded_file.name),'wb') as f:
             f.write(uploaded_file.getbuffer())
         return 1
     except Exception as e:
-        print(e)
+        # Print the exception message
+        print(f"Error in save_uploaded_file: {e}")
         return 0
+
 
 
 def feature_extraction(img_path,model):
