@@ -1,8 +1,17 @@
-import pickle
-import os
-filenames = pickle.load(open('filepath.pkl','rb'))
 
-for file in os.listdir('images'):
-    filenames.append(os.path.join('images',file))
+import os
+
+filenames = []
+
+# Sort the folder names
+folder_names = sorted(['images1', 'images2', 'images3', 'images4', 'images5'])
+
+# Iterate over sorted folder names
+for folder_name in folder_names:
+    # Iterate over files in each folder
+    for file in os.listdir(folder_name):
+        # Check if the file is not a shortcut (.lnk)
+        if not file.endswith('.lnk'):
+            filenames.append(os.path.join(folder_name, file))
 
 pickle.dump(filenames,open('filepath.pkl','wb'))
