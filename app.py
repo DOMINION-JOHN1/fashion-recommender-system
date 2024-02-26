@@ -27,8 +27,10 @@ def save_uploaded_file(uploaded_file):
         with open(os.path.join('uploads',uploaded_file.name),'wb') as f:
             f.write(uploaded_file.getbuffer())
         return 1
-    except:
+    except Exception as e:
+        print(e)
         return 0
+
 
 def feature_extraction(img_path,model):
     img = image.load_img(img_path, target_size=(224, 224))
