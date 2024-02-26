@@ -2,7 +2,7 @@ name: Update_Model
 
 on:
   schedule:
-    - cron: "47 00 * * *"
+    - cron: "52 00 * * *"
 
 jobs:
   update_model:
@@ -35,5 +35,5 @@ jobs:
       - name: Commit and Push
         run: |
           git add .
-          git commit -m "Update filenames.pkl"
+          git commit -m "Update filepath.pkl"
           git push origin HEAD:refs/heads/main
