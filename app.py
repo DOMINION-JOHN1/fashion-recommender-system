@@ -36,8 +36,6 @@ def save_uploaded_file(uploaded_file):
         print(f"Error in save_uploaded_file: {e}")
         return 0
 
-
-
 def feature_extraction(img_path,model):
     img = image.load_img(img_path, target_size=(224, 224))
     img_array = image.img_to_array(img)
@@ -56,21 +54,17 @@ def recommend(features,feature_list):
 
     return indices
 
-# steps
-# file upload -> save
 uploaded_file = st.file_uploader("Choose an image")
 if uploaded_file is not None:
     if save_uploaded_file(uploaded_file):
-        # display the file
         display_image = Image.open(uploaded_file)
         st.image(display_image)
-        # feature extract
         features = feature_extraction(os.path.join("uploads",uploaded_file.name),model)
-        #st.text(features)
-        # recommendention
         indices = recommend(features,feature_list)
-        # show
         col1,col2,col3,col4,col5 = st.columns(5)
+
+        # Add a print statement to print the file path
+        print(f"File path: {filenames[indices[0][0]]}")
 
         with col1:
             st.image(filenames[indices[0][0]])
