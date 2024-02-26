@@ -10,7 +10,7 @@ from sklearn.neighbors import NearestNeighbors
 from numpy.linalg import norm
 from classification_models.tfkeras import Classifiers
 
-filenames = pickle.load(open('filenames.pkl','rb'))
+filenames = pickle.load(open('filepath.pkl','rb'))
 feature_list = pickle.load(open('feature_list.pkl','rb'))
 feature_list = np.array(feature_list)
 # Get the ResNeXt model
